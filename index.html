@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>War Room Político Boyacá 2027 - Wilmer Castellanos</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    .tab-btn.active {
+      border-bottom-color: #22c55e;
+      color: #22c55e;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen antialiased p-3 sm:p-6 font-sans">
+  <div class="max-w-7xl mx-auto space-y-6">
+    
+    <!-- Top Header / Executive Banner -->
+    <header class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-5 shadow-2xl backdrop-blur-sm flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-5 w-full md:w-auto">
+        <div class="relative w-24 h-24 rounded-2xl overflow-hidden border-2 border-green-500 shadow-md flex-shrink-0 bg-slate-700">
+          <img src="images/media_1791917992770.png" alt="Wilmer Castellanos" class="w-full h-full object-cover">
+          <span class="absolute bottom-1 right-1 w-3.5 h-3.5 bg-green-500 border-2 border-slate-900 rounded-full" title="Operación Activa"></span>
+        </div>
+        <div class="space-y-1">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-500/20 text-green-400 border border-green-500/30">Candidato Oficializable</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">Gobernación de Boyacá 2028-2031</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">Alianza Verde</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-center gap-2">
+            Wilmer Yair Castellanos Hernández
+          </h1>
+          <p class="text-sm text-slate-400 font-medium">
+            Ingeniero Civil · Exalcalde de Sutamarchán · Exdirector Departamental de Vías · Excongresista (Cámara 2022-2026)
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Counters -->
+      <div class="grid grid-cols-3 gap-3 w-full md:w-auto text-center border-t md:border-t-0 md:border-l border-slate-700 pt-4 md:pt-0 md:pl-6">
+        <div class="bg-slate-950/50 p-2.5 rounded-xl border border-slate-800">
+          <div class="text-xs text-slate-400 font-medium">Votación 2022</div>
+          <div class="text-xl font-black text-green-400">37.302</div>
+          <div class="text-[10px] text-slate-500">Base verificada</div>
+        </div>
+        <div class="bg-slate-950/50 p-2.5 rounded-xl border border-slate-800">
+          <div class="text-xs text-slate-400 font-medium">Meta 2027</div>
+          <div class="text-xl font-black text-amber-400">210.000</div>
+          <div class="text-[10px] text-slate-500">Umbral victoria</div>
+        </div>
+        <div class="bg-slate-950/50 p-2.5 rounded-xl border border-slate-800">
+          <div class="text-xs text-slate-400 font-medium">Leyes Autoría</div>
+          <div class="text-xl font-black text-blue-400">3</div>
+          <div class="text-[10px] text-slate-500">Agro / Clima / Cuidado</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="flex border-b border-slate-700 space-x-2 sm:space-x-8 overflow-x-auto text-sm">
+      <button onclick="switchTab('perfil')" id="tab-perfil" class="tab-btn active py-3 px-3 border-b-2 border-transparent text-slate-400 hover:text-white transition flex items-center gap-2 whitespace-nowrap">
+        <span>👤</span> Perfil & Arquetipo
+      </button>
+      <button onclick="switchTab('poder')" id="tab-poder" class="tab-btn py-3 px-3 border-b-2 border-transparent text-slate-400 hover:text-white transition flex items-center gap-2 whitespace-nowrap">
+        <span>🕸️</span> Mapa de Poder & Rivalidades
+      </button>
+      <button onclick="switchTab('territorio')" id="tab-territorio" class="tab-btn py-3 px-3 border-b-2 border-transparent text-slate-400 hover:text-white transition flex items-center gap-2 whitespace-nowrap">
+        <span>🗺️</span> Inteligencia Territorial (123 Mpios)
+      </button>
+      <button onclick="switchTab('foda')" id="tab-foda" class="tab-btn py-3 px-3 border-b-2 border-transparent text-slate-400 hover:text-white transition flex items-center gap-2 whitespace-nowrap">
+        <span>⚖️</span> FODA & Vulnerabilidades
+      </button>
+      <button onclick="switchTab('warroom')" id="tab-warroom" class="tab-btn py-3 px-3 border-b-2 border-transparent text-slate-400 hover:text-white transition flex items-center gap-2 whitespace-nowrap">
+        <span>🎯</span> Estructura del War Room
+      </button>
+      <button onclick="switchTab('crisis')" id="tab-crisis" class="tab-btn py-3 px-3 border-b-2 border-transparent text-slate-400 hover:text-white transition flex items-center gap-2 whitespace-nowrap">
+        <span>🚨</span> Protocolo Anti-Crisis
+      </button>
+    </nav>
+
+    <!-- TAB 1: PERFIL & ARQUETIPO -->
+    <section id="content-perfil" class="space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Left: Candidacy DNA Card -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 space-y-4">
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <span class="text-green-400">🏛️</span> ADN del Candidato
+          </h2>
+          <div class="space-y-3 text-sm">
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+              <span class="text-xs text-slate-400 uppercase tracking-wider block font-semibold">Arquetipo Político</span>
+              <p class="font-bold text-green-300 text-base mt-0.5">"El Ingeniero de Soluciones Reales"</p>
+              <p class="text-xs text-slate-400 mt-1">Conecta el rigor técnico de la ingeniería con la cercanía campesina y la experiencia de gestión en territorio.</p>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden border border-slate-700 my-2 shadow">
+              <img src="images/media_1791917992461.jpg" alt="Wilmer Castellanos Despacho" class="w-full h-44 object-cover object-top">
+              <div class="p-2 bg-slate-950 text-[11px] text-slate-400 text-center">
+                Wilmer Castellanos en planeación y estructuración de proyectos territoriales.
+              </div>
+            </div>
+
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+              <span class="text-xs text-slate-400 uppercase tracking-wider block font-semibold">Edad & Origen</span>
+              <p class="text-white font-medium">38 años (Nacido el 5 de agosto de 1988 en Tunja, Boyacá).</p>
+            </div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+              <span class="text-xs text-slate-400 uppercase tracking-wider block font-semibold">Formación de Alta Gerencia</span>
+              <ul class="text-slate-300 text-xs list-disc list-inside space-y-1 mt-1">
+                <li>Ingeniería Civil</li>
+                <li>Especialista en Gobierno y Gestión Territorial</li>
+                <li>Especialista en Vías y Pavimentos</li>
+                <li>Especialista en Gestión Ambiental</li>
+              </ul>
+            </div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+              <span class="text-xs text-slate-400 uppercase tracking-wider block font-semibold">Renuncia Estratégica a la Cámara</span>
+              <p class="text-slate-300 text-xs mt-1">Efectiva desde el 4 de junio de 2026. Blindó jurídicamente su aspiración al evitar inhabilidades electorales del régimen uninominal.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center: Trayectoria Escalonada -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 space-y-4">
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <span class="text-blue-400">📈</span> Escalafón Público Completo
+          </h2>
+
+          <div class="rounded-xl overflow-hidden border border-slate-700 shadow mb-3">
+            <img src="images/media_1791917992567.png" alt="Wilmer en el Congreso" class="w-full h-44 object-cover">
+            <div class="p-2 bg-slate-950 text-[11px] text-slate-400 text-center">
+              Comisión Tercera de la Cámara: Liderazgo en presupuesto, hacienda y crédito público.
+            </div>
+          </div>
+
+          <div class="relative border-l-2 border-slate-700 ml-3 pl-5 space-y-5 text-sm">
+            <div class="relative group">
+              <span class="absolute -left-[27px] top-1 w-4 h-4 rounded-full bg-green-500 border-2 border-slate-900"></span>
+              <div class="text-xs font-bold text-green-400">2016–2019 · Nivel Municipal</div>
+              <h3 class="font-bold text-white text-base">Alcalde de Sutamarchán</h3>
+              <p class="text-xs text-slate-400 mt-0.5">
+                Lideró obras de infraestructura vial municipal y resolvió la histórica escasez de agua potable mediante la gestión e ingeniería de un pozo profundo.
+              </p>
+            </div>
+
+            <div class="relative group">
+              <span class="absolute -left-[27px] top-1 w-4 h-4 rounded-full bg-blue-500 border-2 border-slate-900"></span>
+              <div class="text-xs font-bold text-blue-400">2020–2021 · Nivel Departamental</div>
+              <h3 class="font-bold text-white text-base">Director de Infraestructura Vial (Gobernación)</h3>
+              <p class="text-xs text-slate-400 mt-0.5">
+                En el gabinete del gobernador Ramiro Barragán dirigió la estructuración de corredores estratégicos, maquinaria y mantenimiento de vías secundarias y terciarias de Boyacá.
+              </p>
+            </div>
+
+            <div class="relative group">
+              <span class="absolute -left-[27px] top-1 w-4 h-4 rounded-full bg-amber-500 border-2 border-slate-900"></span>
+              <div class="text-xs font-bold text-amber-400">2022–2026 · Nivel Nacional</div>
+              <h3 class="font-bold text-white text-base">Representante a la Cámara por Boyacá</h3>
+              <p class="text-xs text-slate-400 mt-0.5">
+                Elegido con 37.302 votos. Miembro de la Comisión Tercera (Hacienda y Presupuesto). Autor de 3 leyes de la República y gestor de recursos para Boyacá.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 3 Leyes Promulgadas -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 space-y-4">
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <span class="text-amber-400">📜</span> 3 Leyes de la República Sancionadas
+          </h2>
+          <div class="space-y-3">
+            
+            <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-700/60 hover:border-green-500/50 transition">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-green-400 text-sm">Ley 2378 de 2024</span>
+                <span class="text-[10px] bg-green-950 text-green-300 px-2 py-0.5 rounded border border-green-800 font-semibold">Agro</span>
+              </div>
+              <h4 class="font-semibold text-white text-xs mt-1">Política Nacional de Mercadeo Agropecuario</h4>
+              <p class="text-[11px] text-slate-400 mt-1">
+                Mecanismos directos de comercialización sin intermediarios abusivos para campesinos, apoyo logístico y estabilización de precios de cosechas boyacenses.
+              </p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-700/60 hover:border-blue-500/50 transition">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-blue-400 text-sm">Ley 2427 de 2024</span>
+                <span class="text-[10px] bg-blue-950 text-blue-300 px-2 py-0.5 rounded border border-blue-800 font-semibold">Sostenibilidad</span>
+              </div>
+              <h4 class="font-semibold text-white text-xs mt-1">Educación Ambiental y Cambio Climático</h4>
+              <p class="text-[11px] text-slate-400 mt-1">
+                Formación escolar y comunitaria en gestión del riesgo, mitigación climática y protección integral de páramos y cuencas hídricas departamentales.
+              </p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-700/60 hover:border-amber-500/50 transition">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-amber-400 text-sm">Ley 2456 de 2025</span>
+                <span class="text-[10px] bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-800 font-semibold">Social</span>
+              </div>
+              <h4 class="font-semibold text-white text-xs mt-1">Protección a Personas con Discapacidad y Cuidadores</h4>
+              <p class="text-[11px] text-slate-400 mt-1">
+                Fondos de apoyo directo, subsidios e inclusión social y laboral para madres y familias cuidadoras en los 123 municipios.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 2: MAPA DE PODER -->
+    <section id="content-poder" class="hidden space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Power Map Visualization -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 space-y-4">
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>🕸️</span> Arquitectura de Fuerzas y Alianzas en Boyacá
+          </h2>
+
+          <div class="rounded-xl overflow-hidden border border-slate-700 shadow mb-2">
+            <img src="images/media_1791917992617.png" alt="Liderazgo Verde Boyacá" class="w-full h-48 object-cover">
+            <div class="p-2 bg-slate-950 text-[11px] text-slate-400 text-center">
+              El núcleo departamental: Carlos Amaya (Gobernador), Wilmer Castellanos y el liderazgo regional verde.
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <div class="p-3.5 bg-slate-900/70 rounded-xl border-l-4 border-green-500 flex justify-between items-start">
+              <div>
+                <span class="text-xs font-semibold text-green-400 uppercase">El Eje de Poder Departamental</span>
+                <h3 class="font-bold text-white text-sm">Carlos Amaya (Gobernador de Boyacá)</h3>
+                <p class="text-xs text-slate-400 mt-1">
+                  Jefe político del sector verde mayoritario. Castellanos forma parte orgánica de su estructura institucional desde 2016. Reto: consolidar su respaldo sin generar percepción de imposición dinástica.
+                </p>
+              </div>
+              <span class="text-xs bg-green-900/50 text-green-300 px-2 py-1 rounded font-bold">Aliado Central</span>
+            </div>
+
+            <div class="p-3.5 bg-slate-900/70 rounded-xl border-l-4 border-blue-500 flex justify-between items-start">
+              <div>
+                <span class="text-xs font-semibold text-blue-400 uppercase">Articulación Legislativa y Magisterio</span>
+                <h3 class="font-bold text-white text-sm">Jaime Raúl Salamanca (Representante a la Cámara)</h3>
+                <p class="text-xs text-slate-400 mt-1">
+                  Expresidente de la Cámara y figura verde reelecta 2026-2030. Fuerza clave en sectores de educación y salud. Su sintonía con Castellanos garantiza estabilidad en la base partidista.
+                </p>
+              </div>
+              <span class="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded font-bold">Bloque Verde</span>
+            </div>
+
+            <div class="p-3.5 bg-slate-900/70 rounded-xl border-l-4 border-amber-500 flex justify-between items-start">
+              <div>
+                <span class="text-xs font-semibold text-amber-400 uppercase">Competencia Interna por el Aval</span>
+                <h3 class="font-bold text-white text-sm">Wilmer Leal (Exdirector Colombia en Paz)</h3>
+                <p class="text-xs text-slate-400 mt-1">
+                  Mencionado en medios como alternativa para la Gobernación con respaldo de sectores de izquierda y Alianza Verde nacional. Reto: resolver la candidatura verde mediante encuesta o consenso sin fracturar al partido.
+                </p>
+              </div>
+              <span class="text-xs bg-amber-900/50 text-amber-300 px-2 py-1 rounded font-bold">Contendor Interno</span>
+            </div>
+
+            <div class="p-3.5 bg-slate-900/70 rounded-xl border-l-4 border-red-500 flex justify-between items-start">
+              <div>
+                <span class="text-xs font-semibold text-red-400 uppercase">Rival Independiente / Eje de Seguridad</span>
+                <h3 class="font-bold text-white text-sm">Pedro Arnulfo Sánchez (Exministro de Defensa)</h3>
+                <p class="text-xs text-slate-400 mt-1">
+                  Perfil de alta visibilidad nacional, enfocado en seguridad, orden público, corredores logísticos y agroindustria. Atrae el voto descontento urbano y empresarial.
+                </p>
+              </div>
+              <span class="text-xs bg-red-900/50 text-red-300 px-2 py-1 rounded font-bold">Rival Externo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Political Context Alert -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-amber-400 flex items-center gap-2">
+              <span>⚠️</span> Alerta Estratégica: El Efecto Presidencial 2026
+            </h2>
+            <div class="p-4 bg-amber-950/30 border border-amber-500/40 rounded-xl text-xs text-amber-200/90 leading-relaxed space-y-2">
+              <p class="font-bold text-amber-300">
+                El candidato respaldado por el sector verde en segunda vuelta presidencial perdió en 119 de los 123 municipios de Boyacá (Junio 2026).
+              </p>
+              <p>
+                Este dato, reportado por <span class="underline">Boyacá 7 Días</span>, es la principal advertencia para 2027: existe fatiga con las etiquetas oficialistas y un electorado boyacense dispuesto a emitir votos de castigo.
+              </p>
+              <div class="pt-2 border-t border-amber-800/50">
+                <span class="font-bold text-white block">Respuesta del War Room:</span>
+                • La campaña de Wilmer Castellanos NO debe plantearse como un plebiscito nacional partidista.<br>
+                • Debe estructurarse como una <strong>Coalición Cívico-Territorial por Boyacá</strong> con personería técnica, independiente de dogmas, centrada en agua, vías e ingresos campesinos.
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 text-xs space-y-2">
+            <h3 class="font-bold text-white flex items-center gap-2">
+              <span>🤝</span> Estrategia de Coalición Ampliada
+            </h3>
+            <p class="text-slate-300">
+              Para garantizar la victoria, el War Room debe construir una mesa de diálogo multipartidista que sume a:
+            </p>
+            <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-400">
+              <div class="p-2 bg-slate-950 rounded border border-slate-800">✓ Sectores Liberales Departamentales</div>
+              <div class="p-2 bg-slate-950 rounded border border-slate-800">✓ Conservatismo Social Comunal</div>
+              <div class="p-2 bg-slate-950 rounded border border-slate-800">✓ Gremios de Transportadores & Carga</div>
+              <div class="p-2 bg-slate-950 rounded border border-slate-800">✓ Asociaciones Paperas y Lecheras</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 3: INTELIGENCIA TERRITORIAL -->
+    <section id="content-territorio" class="hidden space-y-6">
+      
+      <!-- Boyacá IGAC Map Card -->
+      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+              <span>🗺️</span> Mapa Departamental de Boyacá: 123 Municipios y 13 Provincias
+            </h2>
+            <p class="text-xs text-slate-400">División Político-Administrativa Oficial (Instituto Geográfico Agustín Codazzi - IGAC)</p>
+          </div>
+          <span class="text-xs bg-green-950 text-green-300 px-3 py-1 rounded-full border border-green-800 self-start sm:self-auto font-semibold">13 Provincias en Mapeo</span>
+        </div>
+        
+        <div class="rounded-xl overflow-hidden border border-slate-700 shadow-xl bg-slate-950 flex justify-center">
+          <img src="images/media_1791917992671.png" alt="Mapa División Político Administrativa Boyacá IGAC" class="max-h-[460px] w-auto object-contain">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Table: Historical Footprint -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 lg:col-span-2 space-y-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+              <span>📍</span> Huella Electoral 2022 y Metas de Crecimiento 2027
+            </h2>
+            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded font-semibold">Corte Oficial Cámara</span>
+          </div>
+          <p class="text-xs text-slate-400">
+            Distribución de los 37.302 votos obtenidos por Wilmer Castellanos en 2022 frente a la cuota objetivo requerida para disputar la Gobernación de Boyacá.
+          </p>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-900/80 text-slate-400 uppercase text-[10px] tracking-wider border-b border-slate-700">
+                <tr>
+                  <th class="py-2.5 px-3">Municipio / Zona</th>
+                  <th class="py-2.5 px-3">Provincia</th>
+                  <th class="py-2.5 px-3 text-right">Votos 2022</th>
+                  <th class="py-2.5 px-3 text-right">% de su base</th>
+                  <th class="py-2.5 px-3 text-right text-amber-400">Meta War Room 2027</th>
+                  <th class="py-2.5 px-3 text-center">Prioridad Táctica</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-700/60 text-slate-300">
+                <tr class="hover:bg-slate-700/30">
+                  <td class="py-2 px-3 font-bold text-white">Tunja</td>
+                  <td class="py-2 px-3 text-slate-400">Centro</td>
+                  <td class="py-2 px-3 text-right font-medium">4.311</td>
+                  <td class="py-2 px-3 text-right">11,5%</td>
+                  <td class="py-2 px-3 text-right font-bold text-amber-400">28.000</td>
+                  <td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-red-950 text-red-400 border border-red-800 font-semibold">Urgente</span></td>
+                </tr>
+                <tr class="hover:bg-slate-700/30">
+                  <td class="py-2 px-3 font-bold text-white">Sogamoso</td>
+                  <td class="py-2 px-3 text-slate-400">Sugamuxi</td>
+                  <td class="py-2 px-3 text-right font-medium">2.605</td>
+                  <td class="py-2 px-3 text-right">7,0%</td>
+                  <td class="py-2 px-3 text-right font-bold text-amber-400">22.000</td>
+                  <td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-red-950 text-red-400 border border-red-800 font-semibold">Urgente</span></td>
+                </tr>
+                <tr class="hover:bg-slate-700/30">
+                  <td class="py-2 px-3 font-bold text-white">Chiquinquirá</td>
+                  <td class="py-2 px-3 text-slate-400">Occidente</td>
+                  <td class="py-2 px-3 text-right font-medium">2.125</td>
+                  <td class="py-2 px-3 text-right">5,7%</td>
+                  <td class="py-2 px-3 text-right font-bold text-amber-400">14.000</td>
+                  <td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-amber-950 text-amber-400 border border-amber-800 font-semibold">Alta</span></td>
+                </tr>
+                <tr class="hover:bg-slate-700/30">
+                  <td class="py-2 px-3 font-bold text-white">Duitama</td>
+                  <td class="py-2 px-3 text-slate-400">Tundama</td>
+                  <td class="py-2 px-3 text-right font-medium">1.422</td>
+                  <td class="py-2 px-3 text-right">3,8%</td>
+                  <td class="py-2 px-3 text-right font-bold text-amber-400">18.000</td>
+                  <td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-red-950 text-red-400 border border-red-800 font-semibold">Urgente</span></td>
+                </tr>
+                <tr class="hover:bg-slate-700/30">
+                  <td class="py-2 px-3 font-bold text-white">Paipa</td>
+                  <td class="py-2 px-3 text-slate-400">Tundama</td>
+                  <td class="py-2 px-3 text-right font-medium">518</td>
+                  <td class="py-2 px-3 text-right">1,4%</td>
+                  <td class="py-2 px-3 text-right font-bold text-amber-400">6.500</td>
+                  <td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-blue-950 text-blue-400 border border-blue-800 font-semibold">Media</span></td>
+                </tr>
+                <tr class="hover:bg-slate-700/30">
+                  <td class="py-2 px-3 font-bold text-white">Garagoa</td>
+                  <td class="py-2 px-3 text-slate-400">Neira</td>
+                  <td class="py-2 px-3 text-right font-medium">201</td>
+                  <td class="py-2 px-3 text-right">0,5%</td>
+                  <td class="py-2 px-3 text-right font-bold text-amber-400">4.500</td>
+                  <td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-blue-950 text-blue-400 border border-blue-800 font-semibold">Media</span></td>
+                </tr>
+                <tr class="hover:bg-slate-700/30">
+                  <td class="py-2 px-3 font-bold text-white">Soatá</td>
+                  <td class="py-2 px-3 text-slate-400">Norte</td>
+                  <td class="py-2 px-3 text-right font-medium">158</td>
+                  <td class="py-2 px-3 text-right">0,4%</td>
+                  <td class="py-2 px-3 text-right font-bold text-amber-400">3.500</td>
+                  <td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-blue-950 text-blue-400 border border-blue-800 font-semibold">Media</span></td>
+                </tr>
+                <tr class="bg-green-950/20 font-semibold text-green-300">
+                  <td class="py-2.5 px-3">Resto de Boyacá (116 Mpios)</td>
+                  <td class="py-2.5 px-3 text-slate-400">Ricaurte, Lengupá, etc.</td>
+                  <td class="py-2.5 px-3 text-right font-bold">25.963</td>
+                  <td class="py-2.5 px-3 text-right">69,6%</td>
+                  <td class="py-2.5 px-3 text-right font-black text-green-400">113.500</td>
+                  <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-green-900 text-green-300 font-semibold">Bastión</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Interactive Electoral Goal Calculator -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 space-y-4">
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>🧮</span> Simulador de Meta Departamental
+          </h2>
+          <p class="text-xs text-slate-400">
+            Ajusta los multiplicadores de penetración en las zonas urbanas y rurales para proyectar el resultado final de la campaña.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div>
+              <div class="flex justify-between text-xs font-semibold">
+                <span class="text-slate-300">Crecimiento Corredor Urbano</span>
+                <span id="label-urbano" class="text-amber-400 font-bold">6.0x</span>
+              </div>
+              <input type="range" id="slider-urbano" min="2" max="10" step="0.5" value="6" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer mt-2" oninput="calculateVotes()">
+              <span class="text-[10px] text-slate-500">Tunja, Duitama, Sogamoso, Chiquinquirá</span>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-semibold">
+                <span class="text-slate-300">Crecimiento Rural & Provincias</span>
+                <span id="label-rural" class="text-green-400 font-bold">4.2x</span>
+              </div>
+              <input type="range" id="slider-rural" min="2" max="6" step="0.2" value="4.2" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer mt-2" oninput="calculateVotes()">
+              <span class="text-[10px] text-slate-500">Ricaurte, Occidente, Norte, Neira, Lengupá</span>
+            </div>
+
+            <div class="p-4 bg-slate-950 rounded-xl border border-slate-800 text-center space-y-1">
+              <span class="text-xs text-slate-400 uppercase font-medium">Proyección Total War Room</span>
+              <div id="total-proyeccion" class="text-3xl font-black text-amber-400">208.500</div>
+              <div id="status-meta" class="text-xs font-bold text-green-400">¡Alcanza umbral de victoria! (Meta: 200k+)</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 4: FODA & VULNERABILIDADES -->
+    <section id="content-foda" class="hidden space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Fortalezas -->
+        <div class="bg-slate-800/80 border border-green-500/30 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center gap-2 text-green-400 font-bold">
+            <span>🛡️</span> FORTALEZAS (Internas)
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside">
+            <li><strong>Escalafón administrativo completo:</strong> Experiencia práctica y verificable en Sutamarchán (Alcalde), Vías Departamentales (Director) y Congreso (Representante).</li>
+            <li><strong>Legislación con sello propio:</strong> Tres leyes promulgadas (Mercadeo Agropecuario, Educación Ambiental y Cuidadoras de Discapacidad).</li>
+            <li><strong>Base propia verificada:</strong> 37.302 votos en 2022 y fuerte liderazgo en la provincia de Ricaurte.</li>
+            <li><strong>Perfil de Ingeniero:</strong> Solvencia en estructuración presupuestal, pliegos, OCAD y regalías territoriales.</li>
+          </ul>
+        </div>
+
+        <!-- Oportunidades -->
+        <div class="bg-slate-800/80 border border-blue-500/30 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center gap-2 text-blue-400 font-bold">
+            <span>🚀</span> OPORTUNIDADES (Entorno)
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside">
+            <li><strong>Descentralización de inversión:</strong> Alta demanda en las provincias periféricas (Norte, Gutiérrez, Occidente) por acueductos y placa-huellas.</li>
+            <li><strong>Voto campesino agropecuario:</strong> La Ley 2378 de 2024 permite abanderar el alivio a paperos, cebolleros y ganaderos contra la especulación.</li>
+            <li><strong>Apertura a Coalición Plural:</strong> Posibilidad de aglutinar fuerzas liberales, independientes y conservadoras desencantadas del dogmatismo.</li>
+            <li><strong>Juventud experimentada:</strong> Contraste favorable frente a perfiles tradicionales desgastados.</li>
+          </ul>
+        </div>
+
+        <!-- Debilidades -->
+        <div class="bg-slate-800/80 border border-amber-500/30 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center gap-2 text-amber-400 font-bold">
+            <span>⚠️</span> DEBILIDADES (Internas)
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside">
+            <li><strong>Reconocimiento asimétrico:</strong> Muy alto en Ricaurte y Tunja, pero bajo en provincias del Norte, Valderrama y Puerto Boyacá.</li>
+            <li><strong>Huella digital rezagada:</strong> Presencia en redes sociales moderada (~4.000 seguidores en X); falta penetración en TikTok y formatos audiovisuales virales.</li>
+            <li><strong>Asociación estricta al oficialismo:</strong> Riesgo de absorber las críticas por obras departamentales incompletas o promesas pendientes de la Gobernación.</li>
+            <li><strong>Fricciones en su municipio:</strong> Diferencias públicas con la actual administración de Sutamarchán que pueden ser instrumentalizadas por opositores.</li>
+          </ul>
+        </div>
+
+        <!-- Amenazas -->
+        <div class="bg-slate-800/80 border border-red-500/30 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center gap-2 text-red-400 font-bold">
+            <span>💣</span> AMENAZAS (Externas)
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside">
+            <li><strong>El castigo electoral antipetro/antiverde:</strong> Pérdida del sector en 119 de los 123 municipios en las presidenciales de 2026.</li>
+            <li><strong>Ataques mediáticos por caso Invías:</strong> Reactivación de titulares periodísticos que relacionan gestiones legislativas con presuntas irregularidades.</li>
+            <li><strong>Candidatura de Pedro Arnulfo Sánchez:</strong> Atracción del electorado de orden, empresarios y ciudadanos alarmados por la seguridad territorial.</li>
+            <li><strong>Disputa no resuelta con Wilmer Leal:</strong> Fuga de apoyos en las bases verdes o imposibilidad de llegar a una candidatura de consenso.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 5: ESTRUCTURA DEL WAR ROOM -->
+    <section id="content-warroom" class="hidden space-y-6">
+      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 space-y-6">
+        <div>
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>🎯</span> Comando Operativo de Campaña: Las 6 Células
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">
+            Estructura ágil inspirada en centros de inteligencia política moderna para toma de decisiones en tiempo real.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+          
+          <div class="p-4 bg-slate-900 rounded-xl border border-slate-700/60 space-y-2">
+            <div class="flex items-center gap-2 font-bold text-green-400">
+              <span>📊</span> CÉLULA 1: Inteligencia de Datos
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              Monitoreo del censo electoral, cálculo de votos por mesa en los 123 municipios y seguimiento a la inscripción de cédulas.
+            </p>
+            <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded block">Meta: Atlas Electoral Digital 24/7</span>
+          </div>
+
+          <div class="p-4 bg-slate-900 rounded-xl border border-slate-700/60 space-y-2">
+            <div class="flex items-center gap-2 font-bold text-blue-400">
+              <span>📢</span> CÉLULA 2: Comunicación & Relato
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              Gestión de medios regionales, vocería de prensa y posicionamiento de la narrativa: "El Ingeniero que Conecta a Boyacá".
+            </p>
+            <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded block">Meta: 1 entrevista radial diaria</span>
+          </div>
+
+          <div class="p-4 bg-slate-900 rounded-xl border border-slate-700/60 space-y-2">
+            <div class="flex items-center gap-2 font-bold text-purple-400">
+              <span>📱</span> CÉLULA 3: Escucha Digital & Redes
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              Monitoreo de tendencias en X, TikTok e Instagram. Coordinación de la Red de WhatsApp Veredal para romper el algoritmo.
+            </p>
+            <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded block">Meta: 500 grupos veredales activos</span>
+          </div>
+
+          <div class="p-4 bg-slate-900 rounded-xl border border-slate-700/60 space-y-2">
+            <div class="flex items-center gap-2 font-bold text-red-400">
+              <span>🛡️</span> CÉLULA 4: Blindaje Jurídico & Crisis
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              Respuestas rápidas a fake news, control estricto de topes de financiación y carpetas probatorias de defensa contractual.
+            </p>
+            <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded block">SOP: Reacción en &lt; 90 minutos</span>
+          </div>
+
+          <div class="p-4 bg-slate-900 rounded-xl border border-slate-700/60 space-y-2">
+            <div class="flex items-center gap-2 font-bold text-amber-400">
+              <span>🚜</span> CÉLULA 5: Operación Territorial
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              Articulación con 13 coordinadores provinciales, contacto con alcaldes, concejales y juntas de acción comunal (JAC).
+            </p>
+            <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded block">Meta: 123 comités constituidos</span>
+          </div>
+
+          <div class="p-4 bg-slate-900 rounded-xl border border-slate-700/60 space-y-2">
+            <div class="flex items-center gap-2 font-bold text-emerald-400">
+              <span>📝</span> CÉLULA 6: Unidad Programática
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              Redacción del Programa de Gobierno oficial con costeo técnico, metas fiscales, indicadores de resultado y sustento jurídico.
+            </p>
+            <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded block">Entregable: Programa ante Registraduría</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: PROTOCOLO ANTI-CRISIS -->
+    <section id="crisis" class="hidden space-y-6">
+      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 space-y-6">
+        <div>
+          <h2 class="text-lg font-bold text-red-400 flex items-center gap-2">
+            <span>🚨</span> Protocolo de Respuesta Inmediata y Blindaje Reputacional
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">
+            Procedimiento estandarizado de actuación ante controversias mediáticas sobre contratación (Invías / Sutamarchán).
+          </p>
+        </div>
+
+        <!-- Crisis Workflow Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
+          
+          <div class="p-4 bg-slate-900 rounded-xl border-t-4 border-amber-500 space-y-2">
+            <span class="font-bold text-amber-400">Fase 1: Triage (Minuto 0–15)</span>
+            <p class="text-slate-300">
+              Identificar medio emisor, alcance, severidad legal y actores promotores del ataque. Clasificar en Verde, Amarillo o Rojo.
+            </p>
+          </div>
+
+          <div class="p-4 bg-slate-900 rounded-xl border-t-4 border-blue-500 space-y-2">
+            <span class="font-bold text-blue-400">Fase 2: Evidencia (Minuto 15–45)</span>
+            <p class="text-slate-300">
+              Extraer del repositorio blindado los certificados de SECOP, actas de entrega, paz y salvos y providencias judiciales.
+            </p>
+          </div>
+
+          <div class="p-4 bg-slate-900 rounded-xl border-t-4 border-purple-500 space-y-2">
+            <span class="font-bold text-purple-400">Fase 3: Mensaje (Minuto 45–75)</span>
+            <p class="text-slate-300">
+              Emitir comunicado oficial con firma de la campaña. Publicar hilo técnico en redes del candidato desmintiendo con documentos.
+            </p>
+          </div>
+
+          <div class="p-4 bg-slate-900 rounded-xl border-t-4 border-green-500 space-y-2">
+            <span class="font-bold text-green-400">Fase 4: Despliegue (Minuto 75–90)</span>
+            <p class="text-slate-300">
+              Difusión masiva en la Red de WhatsApp Veredal y vocería en radio regional de directores de obra y beneficiarios campesinos.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Case Simulation: Invías -->
+        <div class="p-5 bg-slate-900/90 rounded-xl border border-slate-700 space-y-3">
+          <h3 class="font-bold text-white text-sm flex items-center gap-2">
+            <span>🛡️</span> Argumentario Matriz: "Gestión en Invías y Obras Viales"
+          </h3>
+          <p class="text-xs text-slate-300 leading-relaxed italic border-l-2 border-green-500 pl-3">
+            "Como Ingeniero y como servidor de Boyacá, mi deber siempre ha sido gestionar recursos para que las vías campesinas no sigan abandonadas. Todas las obras gestionadas son públicas, están en el SECOP, fueron ejecutadas técnicamente y cuentan con el aval de las comunidades. No tengo una sola sanción ni proceso condenatorio; mi mejor testigo son las obras concluidas que hoy disfrutan los campesinos de Boyacá."
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="text-[10px] bg-slate-800 text-slate-400 px-2 py-1 rounded">Certificado Fiscal Contraloría</span>
+            <span class="text-[10px] bg-slate-800 text-slate-400 px-2 py-1 rounded">Certificado Disciplinario Procuraduría</span>
+            <span class="text-[10px] bg-slate-800 text-slate-400 px-2 py-1 rounded">Actas de Liquidación Sutamarchán</span>
+            <span class="text-[10px] bg-slate-800 text-slate-400 px-2 py-1 rounded">Testimonios Comunitarios</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer Note -->
+    <footer class="text-center text-xs text-slate-500 py-4 border-t border-slate-800">
+      War Room Boyacá 2027 · Documento Estratégico de Inteligencia Política y Campaña · Corte: Octubre 2026
+    </footer>
+
+  </div>
+
+  <!-- Inline Tab & Simulator Logic -->
+  <script>
+    function switchTab(tabId) {
+      const tabs = ['perfil', 'poder', 'territorio', 'foda', 'warroom', 'crisis'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('tab-' + t);
+        const content = document.getElementById(t === 'crisis' ? 'crisis' : 'content-' + t);
+        if (btn) btn.classList.remove('active');
+        if (content) content.classList.add('hidden');
+      });
+
+      const activeBtn = document.getElementById('tab-' + tabId);
+      const activeContent = document.getElementById(tabId === 'crisis' ? 'crisis' : 'content-' + tabId);
+      if (activeBtn) activeBtn.classList.add('active');
+      if (activeContent) activeContent.classList.remove('hidden');
+    }
+
+    function calculateVotes() {
+      const uFactor = parseFloat(document.getElementById('slider-urbano').value);
+      const rFactor = parseFloat(document.getElementById('slider-rural').value);
+      
+      document.getElementById('label-urbano').innerText = uFactor.toFixed(1) + 'x';
+      document.getElementById('label-rural').innerText = rFactor.toFixed(1) + 'x';
+
+      // Base 2022
+      const baseUrbano = 11339; // Tunja + Duitama + Sogamoso + Chiquinquirá + Paipa + Garagoa + Soatá
+      const baseRural = 25963;
+
+      const projectedUrbano = Math.round(baseUrbano * uFactor);
+      const projectedRural = Math.round(baseRural * rFactor);
+      const total = projectedUrbano + projectedRural;
+
+      const totalElement = document.getElementById('total-proyeccion');
+      const statusElement = document.getElementById('status-meta');
+
+      totalElement.innerText = total.toLocaleString('es-CO');
+
+      if (total >= 200000) {
+        statusElement.className = "text-xs font-bold text-green-400";
+        statusElement.innerText = "¡Alcanza umbral de victoria sólida! (Meta superada: > 200k)";
+      } else if (total >= 170000) {
+        statusElement.className = "text-xs font-bold text-amber-400";
+        statusElement.innerText = "Zona de disputa cerrada. Se requiere mayor empuje urbano.";
+      } else {
+        statusElement.className = "text-xs font-bold text-red-400";
+        statusElement.innerText = "Insuficiente para ganar la Gobernación. Elevar meta en las 4 ciudades.";
+      }
+    }
+  </script>
+</body>
+</html>
